@@ -81,7 +81,7 @@ function playSnake() {
     }
 
     function gameOverMessage() {
-        let overMessage = alert('Game Over!');
+        let overMessage = alert('Game Over! Try Again.');
         if (overMessage != null) {
             return overMessage;
         }
