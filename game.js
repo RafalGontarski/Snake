@@ -3,14 +3,14 @@
 function playSnake() {
     let startPanel = document.getElementById('start-panel');
     startPanel.classList.add('hidden');
-
-    let score = document.getElementById('score');
-    score.classList.remove('hidden');
+    let scorePlacement = document.getElementById('score');
+    scorePlacement.classList.remove('hidden');
 
     let snakeElements = [];
     let food;
     let snakeDirection = translateNumberToDirection(getRandomInt(0, 3));
     let gameOver = false;
+    let score = 0;
 
     createBoard();
     initSnake();
@@ -63,6 +63,7 @@ function playSnake() {
                 gameOverMessage();
                 destroyBoard();
                 createBoard();
+                restartScore();
                 initSnake();
                 clearInterval(gameInterval);
             }
@@ -78,9 +79,18 @@ function playSnake() {
                 } else {
                     food.classList.remove('apple');
                     createFood();
+                    score += 10;
+                    scorePlacement.innerHTML = `SCORE: ${score}`
+                    console.log(score)
                 }
             }
-        }, 100);
+        }, 20);
+    }
+
+    function restartScore(){
+        score = 0;
+        scorePlacement.innerHTML = `SCORE: ${score}`;
+        // return scorePlacement;
     }
 
     function gameOverMessage() {
