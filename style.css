@@ -35,3 +35,20 @@
    padding: 2px;
    align-items: center;
 }
+
+.snakeBody {
+   background-color: green;
+   border-radius: 20%;
+}
+
+.snakeHead {
+   background-color: rgb(156, 240, 156);
+   border-radius: 50%;
+}
+
+.aple {
+   padding: 2px;
+   background: url(/img/123.png);
+   background-size: cover;
+   max-height: 32px;
+}
