@@ -4,6 +4,9 @@ function playSnake() {
     let startPanel = document.getElementById('start-panel');
     startPanel.classList.add('hidden');
 
+    let score = document.getElementById('score');
+    score.classList.remove('hidden');
+
     let snakeElements = [];
     let food;
     let snakeDirection = translateNumberToDirection(getRandomInt(0, 3));
