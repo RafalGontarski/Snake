@@ -3,13 +3,17 @@
    <head>
       <title>Javascript Game</title>
       <meta charset="UTF-8">
-      <!-- http://proger.i-forge.net/The_smallest_transparent_pixel/ -->
-<!--      <link rel="icon"-->
-<!--         href="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=">-->
       <link rel="stylesheet" href="./style.css" />
       <script src="game.js" type="text/javascript" defer></script>
    </head>
+
    <body>
-      <div id="root"></div>
+      <div class="center" id="start-panel">
+         <h1>Let's Play On Snake!</h1>
+         <button onclick="playSnake()" id="btn">START!</button>
+         <img class="main-snake" src="img/logo.jpeg" alt="Big Snake">
+      </div>
+      <div class="center" id="text"></div>
+      <div class="center" id="root"></div><br>
    </body>
 </html>
