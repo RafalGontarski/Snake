@@ -37,13 +37,14 @@
 }
 
 .snakeBody {
-   background-color: green;
+   background: url(/img/snake_body.png);
    border-radius: 20%;
 }
 
 .snakeHead {
-   background-color: rgb(156, 240, 156);
-   border-radius: 50%;
+   background: url(/img/glowa.png);
+   background-size: cover;
+   
 }
 
 .aple {
