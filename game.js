@@ -84,7 +84,7 @@ function playSnake() {
                     console.log(score)
                 }
             }
-        }, 20);
+        }, 100);
     }
 
     function restartScore(){
