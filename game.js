@@ -13,19 +13,18 @@ function initSnake() {
     console.log(snakeDirection);
 
     for (let i = 0; i < 3; i++) {
-        if(snakeDirection === 'up') yPosition--;
-        if(snakeDirection === 'down') yPosition++;
+        if(snakeDirection === 'up') yPosition++;
+        if(snakeDirection === 'down') yPosition--;
         if(snakeDirection === 'right') xPosition++;
         if(snakeDirection === 'left') xPosition--;
 
-        const snakeElement = document.querySelector(
-            `[data-x="${xPosition}"][data-y="${yPosition}"]`
-        );
+        const snakeElement = getBoardElement(xPosition, yPosition);
         snakeElements.unshift(snakeElement);
         snakeElement.classList.add('snake');
     }
     moveSnake();
     controlSnake();
+    createFood();
 }
 
 function moveSnake() {
@@ -40,15 +39,40 @@ function moveSnake() {
 
         if(isGameOver(nextX,nextY)) clearInterval(gameInterval);
         else {
-            const nextSnakeElement = document.querySelector(
-                `[data-x="${nextX}"][data-y="${nextY}"]`
-            );
+            const nextSnakeElement = getBoardElement(nextX, nextY);
 
             snakeElements.unshift(nextSnakeElement);
             nextSnakeElement.classList.add('snake');
-            snakeElements.pop().classList.remove('snake');
+
+            if(nextSnakeElement !== food) {
+                snakeElements.pop().classList.remove('snake');
+            } else {
+                food.classList.remove('food');
+                createFood();
+            }
         }
     }, 200);
+}
+
+function createFood(){
+    let xPosition;
+    let yPosition;
+
+    do{
+        xPosition = getRandomInt(1,20);
+        yPosition = getRandomInt(1,20);
+    } while (
+        snakeElements.some(({ dataset }) => dataset.x == xPosition && dataset.y == yPosition
+        )
+    );
+
+    food = getBoardElement(xPosition, yPosition);
+    food.classList.add('food');
+}
+
+function getBoardElement(x,y){
+    return document.querySelector(
+        `[data-x="${x}"][data-y="${y}"]`);
 }
 
 function controlSnake() {
@@ -100,7 +124,7 @@ function createBoard() {
  }
 
 function getRandomInt(min, max) {
-    return Math.floor(Math.random()*(max - min)) + min;
+    return Math.round(Math.random()*(max - min)) + min;
 }
 
 function translateNumberToDirection(number) {
