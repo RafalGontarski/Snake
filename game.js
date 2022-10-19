@@ -72,7 +72,7 @@ createAple();
 
 let input = document.createElement('input');
 const bodyElement = document.querySelector('.title');
-console.log(bodyElement);
+
 bodyElement.after(input);
 input.style.cssText = `
 margin: auto;
@@ -109,10 +109,12 @@ function steps() {
       if (snakeCoordinates[0] > 1) {
          snakeBody.unshift(document.querySelector('[posX = "' + (+snakeCoordinates[0] -1)+ '"][posY = "' +
          snakeCoordinates[1] + '"]'));
+        // snakeBody[0].classList.add('headLeft');
       } else {
          snakeBody.unshift(document.querySelector('[posX = "15"][posY = "' +
          snakeCoordinates[1] + '"]'));
       }
+     
    } else if (direction == 'up') {
       if (snakeCoordinates[1] < 15) {
          snakeBody.unshift(document.querySelector('[posX = "' + snakeCoordinates[0] + '"][posY = "' +

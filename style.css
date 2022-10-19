@@ -38,19 +38,33 @@
 }
 
 .snakeBody {
-   background: url(/img/snake_body.png);
+   background: url(img/snake_body.png);
    border-radius: 20%;
 }
 
 .snakeHead {
-   background: url(/img/glowa.png);
+   background: url(img/glowa.png);
    background-size: cover;
-   
+}
+
+.headUp {
+   background: url(img/glowa_up.png);
+   background-size: cover;
+}
+
+.headLeft {
+   background: url(img/glowa_left.png);
+   background-size: cover;
+}
+
+.headDown {
+   background: url(img/glowa_down.png);
+   background-size: cover;
 }
 
 .aple {
    padding: 2px;
-   background: url(/img/123.png);
+   background: url(img/123.png);
    background-size: cover;
    max-height: 32px;
 }
