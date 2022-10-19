@@ -6,6 +6,22 @@ function initGame() {
 
 }
 
+function sound(src){
+   this.sound = document.createElement('audio');
+   this.sound.src = src;
+   this.sound.setAttribute('preload', 'auto');
+   this.sound.setAttribute('controls', 'none');
+   this.sound.style.display ='none';
+   document.body.appendChild(this.sound)
+   this.play = function (){
+      this.sound.play();
+   }
+   this.stop = function (){
+      this.sound.pause()
+   }
+}
+
+let myMusic = new sound('sound/eyeOfTheTiger.mp3');
 
 let cell = document.getElementsByClassName('col');
 let x = 1,
@@ -28,11 +44,14 @@ function getSnake() {
    return [posX, posY];
 }
 
+
+
 let positionSnake = getSnake();
 let snakeBody = [document.querySelector('[posX = "' + positionSnake[0] + '"][posY = "' +
  positionSnake[1] + '"]'), document.querySelector('[posX = "' + (positionSnake[0]-1) +
   '"][posY = "' + positionSnake[1] + '"]'), document.querySelector('[posX = "' + (positionSnake[0]-2) + '"][posY = "' + positionSnake[1] + '"]')];
 
+   myMusic.play()
 
 for (let i = 0; i<snakeBody.length; i++) {
    snakeBody[i].classList.add('snakeBody');
@@ -94,6 +113,9 @@ function steps() {
    snakeBody[0].classList.remove('snakeHead');
    snakeBody[snakeBody.length-1].classList.remove('snakeBody');
    snakeBody.pop();
+
+
+
    
    
    if (direction == 'right') {
