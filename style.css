@@ -1,0 +1,70 @@
+
+.container{
+   margin: 0 auto;
+   max-width: 600px;
+}
+
+.bord {
+   border: 2px solid rgb(53, 52, 52);
+   height: 600px;
+   background-color: rgb(234, 230, 230);
+   margin-bottom: 30px;
+}
+.col {
+   width: 60px;
+   height: 30px;
+
+}
+
+.title {
+   margin-top: 30px;
+   text-align: center;
+} 
+
+.row {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+}
+
+.col {
+   border: 1px dashed gray;
+   width: 36px;
+   height: 34px;
+   text-align: center;
+   padding: 2px;
+   align-items: center;
+}
+
+.snakeBody {
+   background: url(img/snake_body.png);
+   border-radius: 20%;
+}
+
+.snakeHead {
+   background: url(img/glowa.png);
+   background-size: cover;
+}
+
+.headUp {
+   background: url(img/glowa_up.png);
+   background-size: cover;
+}
+
+.headLeft {
+   background: url(img/glowa_left.png);
+   background-size: cover;
+}
+
+.headDown {
+   background: url(img/glowa_down.png);
+   background-size: cover;
+}
+
+.aple {
+   padding: 2px;
+   background: url(img/123.png);
+   background-size: cover;
+   max-height: 32px;
+}
