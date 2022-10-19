@@ -7,7 +7,7 @@
 .bord {
    border: 2px solid rgb(53, 52, 52);
    height: 600px;
-   background-color: rgb(234, 230, 230);
+   background: url(img/grass.jpg);
    margin-bottom: 30px;
 }
 .col {

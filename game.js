@@ -28,7 +28,7 @@ function stopMusic(){
 }
 
 let myMusic = new sound('sound/eyeOfTheTiger.mp3');
-let myEatingSound = new sound('sound/mlaskanie.mp3');
+let myEatingSound = new sound('sound/ra.wav');
 
 let cell = document.getElementsByClassName('col');
 let x = 1,
