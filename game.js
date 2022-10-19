@@ -28,6 +28,7 @@ function stopMusic(){
 }
 
 let myMusic = new sound('sound/eyeOfTheTiger.mp3');
+let myEatingSound = new sound('sound/mlaskanie.mp3');
 
 let cell = document.getElementsByClassName('col');
 let x = 1,
@@ -163,6 +164,7 @@ function steps() {
       let xElem = snakeBody[snakeBody.length - 1].getAttribute('posX');
       let yElem = snakeBody[snakeBody.length - 1].getAttribute('posY');
       snakeBody.push(document.querySelector('[posX = "' + xElem + '"][posY = "' + yElem + '"]'));
+      myEatingSound.play();
       createAple();
       score++;
       input.value = `Youre score: ${score}`;

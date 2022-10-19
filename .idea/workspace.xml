@@ -7,7 +7,6 @@
     <list default="true" id="5c9ab3aa-acba-44c7-896e-3fc11260bad5" name="Changes" comment="v0.6 Scoring in progress.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +69,7 @@
       <workItem from="1666078135055" duration="31054000" />
       <workItem from="1666120010222" duration="644000" />
       <workItem from="1666170755110" duration="2133000" />
+      <workItem from="1666174039751" duration="1689000" />
     </task>
     <task id="LOCAL-00001" summary="v0.1">
       <created>1666082682270</created>
