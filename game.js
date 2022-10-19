@@ -20,6 +20,12 @@ function sound(src){
       this.sound.pause()
    }
 }
+function playTheme(){
+   myMusic.play();
+}
+function stopMusic(){
+   myMusic.stop()
+}
 
 let myMusic = new sound('sound/eyeOfTheTiger.mp3');
 
@@ -44,14 +50,11 @@ function getSnake() {
    return [posX, posY];
 }
 
-
-
 let positionSnake = getSnake();
 let snakeBody = [document.querySelector('[posX = "' + positionSnake[0] + '"][posY = "' +
  positionSnake[1] + '"]'), document.querySelector('[posX = "' + (positionSnake[0]-1) +
   '"][posY = "' + positionSnake[1] + '"]'), document.querySelector('[posX = "' + (positionSnake[0]-2) + '"][posY = "' + positionSnake[1] + '"]')];
 
-   myMusic.play()
 
 for (let i = 0; i<snakeBody.length; i++) {
    snakeBody[i].classList.add('snakeBody');
