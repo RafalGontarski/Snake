@@ -32,6 +32,8 @@ function playSnake() {
             const snakeElement = getBoardElement(xPosition, yPosition);
             snakeElements.unshift(snakeElement);
             snakeElement.classList.add('snake');
+            // snakeElement[0].classList.add('snake-head');
+            // snakeElement.classList.add('snake-body');
         }
         moveSnake();
         controlSnake();
