@@ -68,3 +68,11 @@
    background-size: cover;
    max-height: 32px;
 }
+
+.hidden{
+   display: none;
+}
+
+.center{
+   text-align: center;
+}
