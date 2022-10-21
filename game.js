@@ -1,3 +1,4 @@
+initGame();
 
 function initGame() {
 
@@ -26,11 +27,12 @@ function initGame() {
       myMusic.play();
    }
    function stopMusic(){
-      myMusic.stop()
+      myMusic.stop();
    }
-
+   
    let myMusic = new sound('sound/eyeOfTheTiger.mp3');
    let myEatingSound = new sound('sound/ra.wav');
+   let boomSound = new sound('sound/boom.mp3')
 
    let cell = document.getElementsByClassName('col');
    let x = 1,
@@ -63,6 +65,7 @@ function initGame() {
       snakeBody[i].classList.add('snakeBody');
    }
 
+   snakeBody[snakeBody.length - 1].classList.add('snakeTail');
    snakeBody[0].classList.add('snakeHead');
 
    console.log(snakeBody);
@@ -117,12 +120,10 @@ function initGame() {
    function steps() {
       let snakeCoordinates = [snakeBody[0].getAttribute('posX'), snakeBody[0].getAttribute('posY')];
       snakeBody[0].classList.remove('snakeHead');
+      snakeBody[snakeBody.length-1].classList.remove('snakeTail');
       snakeBody[snakeBody.length-1].classList.remove('snakeBody');
       snakeBody.pop();
-
-
-
-
+      
 
       if (direction == 'right') {
          //warunek przechodzenia przez sciany
@@ -134,10 +135,10 @@ function initGame() {
             snakeCoordinates[1] + '"]'));
          }
       } else if (direction == 'left') {
+         
          if (snakeCoordinates[0] > 1) {
             snakeBody.unshift(document.querySelector('[posX = "' + (+snakeCoordinates[0] -1)+ '"][posY = "' +
             snakeCoordinates[1] + '"]'));
-           // snakeBody[0].classList.add('headLeft');
          } else {
             snakeBody.unshift(document.querySelector('[posX = "15"][posY = "' +
             snakeCoordinates[1] + '"]'));
@@ -181,9 +182,13 @@ function initGame() {
 
          clearInterval(timeSet);
          snakeBody[0].style.background = 'url(/img/1234567.png) center no-repeat';
-         
+         snakeBody[0].style.backgroundSize = "cover";
+         boomSound.play();
       }
+
       snakeBody[0].classList.add('snakeHead');
+      snakeBody[snakeBody.length-1].classList.add('snakeTail');
+
       for (let i = 0; i <snakeBody.length; i++) {
          snakeBody[i].classList.add('snakeBody');
       }
@@ -205,15 +210,18 @@ function initGame() {
          if (e.key == "ArrowLeft" && direction!= 'right') {
             direction = 'left';
             step = false;
+            snakeBody[0].style.cssText =`transform: rotate(-180deg);`;
          }else if (e.key == "ArrowUp" && direction!= 'down') {
             direction = 'up';
             step = false;
+            snakeBody[0].style.cssText =`transform: rotate(-90deg);`;
          }else if (e.key == "ArrowRight" && direction!= 'left') {
             direction = 'right';
             step = false;
          }else if (e.key == "ArrowDown" && direction!= 'up') {
             direction = 'down';
             step = false;
+           snakeBody[0].style.cssText =`transform: rotate(90deg);`;
          }
       }
 
