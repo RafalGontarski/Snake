@@ -176,11 +176,12 @@ function initGame() {
       if (snakeBody[0].classList.contains('snakeBody')) {
          setTimeout(() => {
               alert(`Game over! Youre score: ${score}`)
+              snakeBody[0].style.backgroundSize = "cover";
          }, 200);
 
          clearInterval(timeSet);
          snakeBody[0].style.background = 'url(/img/1234567.png) center no-repeat';
-         snakeBody[0].style.backgroundSize = "cover";
+         
       }
       snakeBody[0].classList.add('snakeHead');
       for (let i = 0; i <snakeBody.length; i++) {
